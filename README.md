@@ -34,14 +34,14 @@ import asyncio
 from styx import Client
 
 async def main():
-    client = Client('localhost:7123')
+	client = Client('localhost:7123')
 
-    # whence can be 'start', 'end' or 'origin' and defines the basis for `position`
-    # position can be negative when using whence='end'
-    # follow determines if the consumer will wait for incoming records when it has reached the end of log
-    consumer = await client.create_consumer('test', whence='start', position=0, follow=True)
-    async for record in consumer:
-        print(record)
+	# whence can be 'start', 'end' or 'origin' and defines the basis for `position`
+	# position can be negative when using whence='end'
+	# follow determines if the consumer will wait for incoming records when it has reached the end of log
+	consumer = await client.create_consumer('test', whence='start', position=0, follow=True)
+	async for record in consumer:
+		print(record)
 
 loop = asyncio.get_event_loop()
 loop.run_until_complete(main())
@@ -54,9 +54,9 @@ import asyncio
 from styx import Client
 
 async def main():
-    client = Client('localhost:7123')
+	client = Client('localhost:7123')
 
-    # Create a log
+	# Create a log
 	result = await client.create_log('test')
 
 	# List all logs
